@@ -7,10 +7,11 @@
 
 Our trip to South America!
 
+*** Expenses
 #+NAME: expenses
 | Date | Name                     | Category  | Country | Amount(MXN) |
 |------+--------------------------+-----------+---------+-------------|
-| N/A  | Backpacks + Camping Gear | Camping   | USA     |       24701 |
+| N/A  | Backpacks + Camping Gear | Camping   | N/A     |       24701 |
 | N/A  | Flights                  | Transport | N/A     |       12600 |
 |------+--------------------------+-----------+---------+-------------|
 |      |                          |           |         |       37301 |
@@ -18,7 +19,7 @@ Our trip to South America!
 
 Filter expenses table. Replace val with country name to filter by country and col with column number to edit change filter results. To generate and show multiple filters use #+CALL: my-filter2(tbl=table1, val="CN") :colnames. [[https://emacs.stackexchange.com/questions/20129/how-can-i-filter-table-in-org-mode][Details]]
 
-#+NAME: filter-by-country
+#+NAME: filter-expenses
 #+BEGIN_SRC elisp :var tbl=expenses col=3 val="USA" :colnames y
     (cl-loop for row in tbl
           if (equal (nth col row) val)
@@ -26,7 +27,8 @@ Filter expenses table. Replace val with country name to filter by country and co
           finally return newtbl)
 #+END_SRC
 
-#+RESULTS: filter-by-country
-| Date | Name                     | Category | Country | Amount(MXN) |
-|------+--------------------------+----------+---------+-------------|
-| N/A  | Backpacks + Camping Gear | Camping  | USA     |       24701 |
+*** Countries
+**** Colombia
+
+Generate expenses summary for country.
+#+CALL: filter-expenses(val="Colombia") :colnames y
