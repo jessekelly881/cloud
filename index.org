@@ -16,7 +16,8 @@ Our trip to South America!
 |      |                          |           |         |       37301 |
 #+TBLFM: @>$5=vsum(@I..@II)
 
-Filter expenses table. Replace val with country name to filter by country and col with column number to edit change filter results..
+Filter expenses table. Replace val with country name to filter by country and col with column number to edit change filter results. To generate and show multiple filters use #+CALL: my-filter2(tbl=table1, val="CN") :colnames. [[https://emacs.stackexchange.com/questions/20129/how-can-i-filter-table-in-org-mode][Details]]
+
 #+NAME: filter-by-country
 #+BEGIN_SRC elisp :var tbl=expenses col=3 val="USA" :colnames y
     (cl-loop for row in tbl
