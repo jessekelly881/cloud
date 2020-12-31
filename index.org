@@ -1,5 +1,31 @@
-* Index                                                                :ATTACH:
-  :PROPERTIES:
-  :ID:       efacbe38-c11f-42e5-afc7-de544f7844b9
-  :DIR:      ~/brain/.files/
-  :END:
+* Index
+** Viaje 2021                                                           :ATTACH:
+:PROPERTIES:
+:ID:       efacbe38-c11f-42e5-afc7-de544f7844b9
+:DIR:      ~/brain/.files/
+:END:
+
+Our trip to South America!
+
+#+NAME: expenses
+| Date | Name                     | Category  | Country | Amount(MXN) |
+|------+--------------------------+-----------+---------+-------------|
+| N/A  | Backpacks + Camping Gear | Camping   | USA     |       24701 |
+| N/A  | Flights                  | Transport | N/A     |       12600 |
+|------+--------------------------+-----------+---------+-------------|
+|      |                          |           |         |       37301 |
+#+TBLFM: @>$5=vsum(@I..@II)
+
+Filter expenses table. Replace val with country name to filter by country and col with column number to edit change filter results..
+#+NAME: filter-by-country
+#+BEGIN_SRC elisp :var tbl=expenses col=3 val="USA" :colnames y
+    (cl-loop for row in tbl
+          if (equal (nth col row) val)
+          collect row into newtbl
+          finally return newtbl)
+#+END_SRC
+
+#+RESULTS: filter-by-country
+| Date | Name                     | Category | Country | Amount(MXN) |
+|------+--------------------------+----------+---------+-------------|
+| N/A  | Backpacks + Camping Gear | Camping  | USA     |       24701 |
