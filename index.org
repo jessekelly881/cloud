@@ -8,6 +8,7 @@
 Our trip to South America!
 
 *** Expenses
+
 #+NAME: expenses
 | Date | Name                     | Category  | Country | Amount(MXN) |
 |------+--------------------------+-----------+---------+-------------|
@@ -17,6 +18,7 @@ Our trip to South America!
 |      |                          |           |         |       37301 |
 #+TBLFM: @>$5=vsum(@I..@II)
 
+:FILTER:
 Filter expenses table. Replace val with country name to filter by country and col with column number to edit change filter results. To generate and show multiple filters use #+CALL: my-filter2(tbl=table1, val="CN") :colnames. [[https://emacs.stackexchange.com/questions/20129/how-can-i-filter-table-in-org-mode][Details]]
 
 #+NAME: filter-expenses
@@ -26,6 +28,8 @@ Filter expenses table. Replace val with country name to filter by country and co
           collect row into newtbl
           finally return newtbl)
 #+END_SRC
+:END:
+
 
 *** Countries
 **** Colombia
