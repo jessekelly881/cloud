@@ -1,4 +1,5 @@
 * Index
+** Contacts
 ** Viaje 2021                                                           :ATTACH:
 :PROPERTIES:
 :ID:       efacbe38-c11f-42e5-afc7-de544f7844b9
@@ -29,7 +30,6 @@ Filter expenses table. Replace val with country name to filter by country and co
           finally return newtbl)
 #+END_SRC
 :END:
-
 
 *** Countries
 **** Colombia
